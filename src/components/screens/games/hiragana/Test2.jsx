@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./HGame1.css";
+import "./HGame.css";
 import { hklist } from "./hklist.js";
 
-function HGame1() {
+function HGame() {
     //Selectors + result
     const menuScreen = document.querySelector(".menuscreen");
     const gameScreen = document.querySelector(".gamescreen");
@@ -146,4 +146,4 @@ function HGame1() {
     )
 }
 
-export default HGame1;
+export default HGame;

@@ -7,5 +7,5 @@ div.gamecontainer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: dotted 5px black;
+    border: none 5px black;
 }

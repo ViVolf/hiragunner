@@ -1,6 +1,7 @@
 import './GameContainer.css';
 import { connect } from 'react-redux';
 import HGame1 from './hiragana/HGame1.jsx';
+import HGame2 from './hiragana/HGame2.jsx';
 
 function GameContainer(props) {
     switch (props.game) {
@@ -11,7 +12,7 @@ function GameContainer(props) {
             <div className='gamecontainer'><HGame1 /></div>
         );
         case 'HGame 2': return (
-            <div className='gamecontainer'>Hey, im second H</div>
+            <div className='gamecontainer'><HGame2 /></div>
         );
         case 'HGame 3': return (
             <div className='gamecontainer'>Hey, im third H</div>
