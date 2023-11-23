@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import NavBar from './components/screens/ui/NavBar';
-import GameContainer from './components/screens/games/GameContainer';
+//import GameContainer from './components/screens/games/GameContainer';
+import MainField from './components/screens/games/MainField';//
 import { Provider } from 'react-redux';
 import store from './redux/store'
 
@@ -13,8 +14,7 @@ root.render(
   <Provider store={store}>
   <React.StrictMode>
     <NavBar />
-    <GameContainer />
-    <App />
+    <MainField />
   </React.StrictMode>
   </Provider>
 );

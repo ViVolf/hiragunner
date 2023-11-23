@@ -108,11 +108,12 @@ function HGame2() {
                 <div className="rightanswer">{rightAnswer} / {wrongAnswer}</div>
                 <div className="questionrow">
                     <img className="qimg" src={queImg.hsrc} alt="Wasap?"></img>
-                    <div className="reference">{answer.eng}</div>
+                    <div className="equality">is</div>
+                    <div className="reference">{answer?.eng}</div>
                 </div>
                 <div className="answerrow">
-                    <button className="answer1 answer" onClick={() => checkAnswer(true)}>True</button>
-                    <button className="answer2 answer" onClick={() => checkAnswer(false)}>False</button>
+                    <button className="answer1b answer" onClick={() => checkAnswer(true)}>True</button>
+                    <button className="answer2b answer" onClick={() => checkAnswer(false)}>False</button>
                 </div>
             </div>
             <div className="resultscreen">

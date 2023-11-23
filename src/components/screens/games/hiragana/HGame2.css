@@ -100,12 +100,12 @@
     transition: background-color 0.4s ease-out, transform 0.4s ease-out;
 }
 
-.answer1:hover {
+.answer1b:hover {
     background-color: rgb(217, 255, 220);
     transform: scale(1.1);
 }
 
-.answer2:hover {
+.answer2b:hover {
     background-color: rgb(255, 217, 217);
     transform: scale(1.1);
 }
@@ -140,7 +140,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 15%;
+    column-gap: 10%;
 }
 
 .reference {
@@ -148,10 +148,14 @@
     border: solid 1px;
     border-radius: 20%;
     height: 100%;
-    width: 18vw;
+    width: 13vw;
     justify-content: center;
     align-items: center;
     font-size: 4vw;
+}
+
+.equality {
+    font-size: 2vw;
 }
 
 /*Results screen*/

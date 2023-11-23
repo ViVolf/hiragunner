@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainfield {
+    display: flex;
+    column-gap: 0;
+}
