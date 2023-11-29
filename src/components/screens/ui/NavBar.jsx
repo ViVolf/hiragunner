@@ -13,9 +13,9 @@ function NavBar() {
         <li className="menu-item dropdown">
           <button>Hiragana</button>
           <ul className="submenu">
-            <li className="submenu-item"><button onClick={() => dispatch(changeGame('HGame 1'))}>Guess the hiragana</button></li>
+            <li className="submenu-item"><button onClick={() => dispatch(changeGame('HGame 1'))}>Guess hiragana</button></li>
             <li className="submenu-item"><button onClick={() => dispatch(changeGame('HGame 2'))}>True / False</button></li>
-            <li className="submenu-item"><button onClick={() => dispatch(changeGame('HGame 3'))}>Game 3</button></li>
+            <li className="submenu-item"><button onClick={() => dispatch(changeGame('HGame 3'))}>Write ur answer</button></li>
           </ul>
         </li>
         <li className="menu-item dropdown">
