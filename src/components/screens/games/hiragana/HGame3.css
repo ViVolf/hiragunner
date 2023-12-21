@@ -83,33 +83,6 @@
     background-color: rgba(212, 0, 0, 0.432);
 }
 
-.answerrow {
-    display: flex;
-    justify-content: center;
-    column-gap: 5vw;
-}
-
-.answer {
-    height: 3.5vw;
-    width: 8vw;
-    border: solid 1px black;
-    background-color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 1.5vw;
-    transition: background-color 0.4s ease-out, transform 0.4s ease-out;
-}
-
-.answer1b:hover {
-    background-color: rgb(217, 255, 220);
-    transform: scale(1.1);
-}
-
-.answer2b:hover {
-    background-color: rgb(255, 217, 217);
-    transform: scale(1.1);
-}
-
 .qimg {
     border: solid 1px;
     border-radius: 20%;
@@ -143,19 +116,20 @@
     column-gap: 10%;
 }
 
-.reference {
-    display: flex;
-    border: solid 1px;
-    border-radius: 20%;
-    height: 100%;
-    width: 13vw;
-    justify-content: center;
-    align-items: center;
-    font-size: 4vw;
+.inputanswer {
+    width: 10vw;
+    height: 3vw;
+    font-size: 3vw;
+    border: none;
 }
 
-.equality {
-    font-size: 2vw;
+.inputanswer:focus {
+    outline: none;
+}
+
+.submitanswer {
+    /* For now */
+    display: none;
 }
 
 /*Results screen*/

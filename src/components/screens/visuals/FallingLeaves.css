@@ -47,39 +47,39 @@
 }
 
 .leaf1 {
-    animation-delay: -6s;
+    animation-delay: -11s; /*-6s*/
 }
 
 .leaf2 {
-    animation-delay: -3.4s;
+    animation-delay: -8.4s; /*-3.4*/
 }
 
 .leaf3 {
-    animation-delay: -4.7s;
+    animation-delay: -9.7s; /*-4.7*/
 }
 
 .leaf21 {
-    animation-delay: -2.1s;
+    animation-delay: -7.1s; /*-2.1*/
 }
 
 .leaf22 {
-    animation-delay: 0.5s;
+    animation-delay: -4.5s; /*0.5*/
 }
 
 .leaf23 {
-    animation-delay: -0.8s;
+    animation-delay: -5.8s; /*-0.8*/
 }
 
 .leaf31 {
-    animation-delay: 1.8s;
+    animation-delay: -3.2s; /*1.8*/
 }
 
 .leaf32 {
-    animation-delay: 4.4s;
+    animation-delay: -0.6s; /*4.4*/
 }
 
 .leaf33 {
-    animation-delay: 3.1s;
+    animation-delay: -1.9s; /*3.1*/
 }
 /*Позиционирование листьев*/
 
