@@ -21,9 +21,9 @@ function NavBar() {
         <li className="menu-item dropdown">
           <button>Katakana</button>
           <ul className="submenu">
-            <li className="submenu-item"><button onClick={() => dispatch(changeGame('KGame 1'))}>Game 1</button></li>
-            <li className="submenu-item"><button onClick={() => dispatch(changeGame('KGame 2'))}>Game 2</button></li>
-            <li className="submenu-item"><button onClick={() => dispatch(changeGame('KGame 3'))}>Game 3</button></li>
+            <li className="submenu-item"><button onClick={() => dispatch(changeGame('KGame 1'))}>Guess katakana</button></li>
+            <li className="submenu-item"><button onClick={() => dispatch(changeGame('KGame 2'))}>True / False</button></li>
+            <li className="submenu-item"><button onClick={() => dispatch(changeGame('KGame 3'))}>Write ur answer</button></li>
           </ul>
         </li>
         <li className="menu-item right"><button onClick={() => dispatch(changeGame('Contact'))}>About</button></li>

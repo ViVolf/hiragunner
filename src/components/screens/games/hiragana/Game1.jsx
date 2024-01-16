@@ -1,37 +1,42 @@
 import { useEffect, useState } from "react";
+import "./Game.css";
 import { hklist } from "./hklist.js";
-import "./HGame3.css";
 
-function HGame3() {
+function Game1(props) {
     //Selectors + result
     const menuScreen = document.querySelector(".menuscreen");
     const gameScreen = document.querySelector(".gamescreen");
     const resultScreen = document.querySelector(".resultscreen");
     const result = document.querySelector(".result");
-    const input = document.querySelector(".inputanswer");
     //Kana rows
     const kanaList = [...hklist];
     const [kanaBuffer, setKB] = useState([]);
     //Questions + answers
     const [queImg, setQI] = useState({});
-    const [answer, setA] = useState({});
+    const [answer1, setA1] = useState({});
+    const [answer2, setA2] = useState({});
+    const [answer3, setA3] = useState({});
     //counters
     const [roundCounter, setRC] = useState(0);
     const [rightAnswer, setRA] = useState(0);
     const [wrongAnswer, setWA] = useState(0);
 
+    //Starter Shuffle
     useEffect(() => {
         cardShuffle();
     }, []);
 
+    //New round iteration
     useEffect(() => {
         newRound();
     }, [queImg]);
 
+    //First Kana setter
     useEffect(() => {
         setQI(kanaBuffer[0] || 0);
     }, [kanaBuffer]);
 
+    //Next Kana setters
     useEffect(() => {
         if (roundCounter > 45) resultEnd(rightAnswer, (rightAnswer / 46).toFixed(2) * 100);
         setQI(kanaBuffer[roundCounter] || 0);
@@ -42,7 +47,6 @@ function HGame3() {
         menuScreen.style.display = 'none';
         gameScreen.style.display = 'flex';
         resultScreen.style.display = 'none';
-        input.focus();
     }
 
     function gameEnd() {
@@ -64,31 +68,44 @@ function HGame3() {
     }
 
     function newRound() {
-        if (!kanaBuffer.length) return;
+        const genSet = new Set();
+        if(!kanaBuffer.length) return;
 
-        let reference = kanaBuffer[Math.floor(Math.random() * 46)];
-        let el = Math.floor(Math.random() * 2);
+        while (genSet.size < 3) {
 
-        if (el === 1) {
-            setA(queImg);
-            return;
+            let el = Math.floor(Math.random() * 46);
+            if (kanaBuffer[el]?.id != queImg.id) {
+                genSet.add(el)
+            }
         }
 
-        setA(reference);
+        const genArr = [...genSet];
+
+        setA1(kanaBuffer[genArr[0]]);
+        setA2(kanaBuffer[genArr[1]]);
+        setA3(kanaBuffer[genArr[2]]);
+
+        switch (Math.floor(Math.random() * 3)) {
+            case 0:
+                setA1(queImg);
+                break;
+            case 1:
+                setA2(queImg);
+                break;
+            case 2:
+                setA3(queImg);
+                break;
+        }
     }
 
     function checkAnswer(ans) {
         setRC((roundCounter) => roundCounter + 1);
-        if (ans.toLowerCase() == queImg.eng) {
-            input.value = '';
-            input.focus();
+        if (ans.id == queImg.id) {
             setRA((rightAnswer) => rightAnswer + 1);
             gameScreen.style.backgroundColor = '#82ff62';
             setTimeout(() => gameScreen.style.backgroundColor = 'transparent', 200)
             return;
         }
-        input.value = '';
-        input.focus();
         setWA((wrongAnswer) => wrongAnswer + 1);
         gameScreen.style.backgroundColor = '#c73153';
         setTimeout(() => gameScreen.style.backgroundColor = 'transparent', 200)
@@ -112,13 +129,11 @@ function HGame3() {
                 <button className="endbutton" onClick={gameEnd}><img src="backarrow.png" className="backicon"></img></button>
                 <div className="roundcount">{roundCounter + 1}</div>
                 <div className="rightanswer">{rightAnswer} / {wrongAnswer}</div>
-                <div className="questionrow">
-                    <img className="qimg" src={queImg.hsrc} alt="Wasap?"></img>
-                </div>
-                <div className="answerform">
-                    <label for="inpanswer">Write in English:</label><br></br>
-                    <input className="inputanswer" id="inpanswer" autoComplete="off" onKeyDown={(e) => {if(e.key === 'Enter') checkAnswer(input.value)}}></input>
-                    <input className="submitanswer" type="button" value="GO" onClick={() => checkAnswer(input.value)}></input>
+                <img className="qimg" src={props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'} alt="Wasap?"></img>
+                <div className="answerrow">
+                    <button className="answer" onClick={() => checkAnswer(answer1)}>{answer1?.eng}</button>
+                    <button className="answer" onClick={() => checkAnswer(answer2)}>{answer2?.eng}</button>
+                    <button className="answer" onClick={() => checkAnswer(answer3)}>{answer3?.eng}</button>
                 </div>
             </div>
             <div className="resultscreen">
@@ -132,4 +147,4 @@ function HGame3() {
     )
 }
 
-export default HGame3;
+export default Game1;

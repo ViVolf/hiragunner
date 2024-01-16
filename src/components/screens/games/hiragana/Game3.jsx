@@ -1,36 +1,35 @@
 import { useEffect, useState } from "react";
-import "./HGame2.css";
 import { hklist } from "./hklist.js";
+import "./Game.css";
 
-function HGame2() {
+function Game3(props) {
     //Selectors + result
     const menuScreen = document.querySelector(".menuscreen");
     const gameScreen = document.querySelector(".gamescreen");
     const resultScreen = document.querySelector(".resultscreen");
     const result = document.querySelector(".result");
+    const input = document.querySelector(".inputanswer");
     //Kana rows
     const kanaList = [...hklist];
     const [kanaBuffer, setKB] = useState([]);
-    //Questions + answers
+    //Question
     const [queImg, setQI] = useState({});
-    const [answer, setA] = useState({});
     //counters
     const [roundCounter, setRC] = useState(0);
     const [rightAnswer, setRA] = useState(0);
     const [wrongAnswer, setWA] = useState(0);
 
+    //Starter Shuffle
     useEffect(() => {
         cardShuffle();
     }, []);
 
-    useEffect(() => {
-        newRound();
-    }, [queImg]);
-
+    //First Kana setter
     useEffect(() => {
         setQI(kanaBuffer[0] || 0);
     }, [kanaBuffer]);
 
+    //Next Kana setters
     useEffect(() => {
         if (roundCounter > 45) resultEnd(rightAnswer, (rightAnswer / 46).toFixed(2) * 100);
         setQI(kanaBuffer[roundCounter] || 0);
@@ -41,6 +40,7 @@ function HGame2() {
         menuScreen.style.display = 'none';
         gameScreen.style.display = 'flex';
         resultScreen.style.display = 'none';
+        input.focus();
     }
 
     function gameEnd() {
@@ -61,28 +61,18 @@ function HGame2() {
         resultScreen.style.display = 'flex';
     }
 
-    function newRound() {
-        if (!kanaBuffer.length) return;
-
-        let reference = kanaBuffer[Math.floor(Math.random() * 46)];
-        let el = Math.floor(Math.random() * 2);
-
-        if (el === 1) {
-            setA(queImg);
-            return;
-        }
-
-        setA(reference);
-    }
-
     function checkAnswer(ans) {
         setRC((roundCounter) => roundCounter + 1);
-        if (ans == (queImg.id == answer.id)) {
+        if (ans.toLowerCase() == queImg.eng) {
+            input.value = '';
+            input.focus();
             setRA((rightAnswer) => rightAnswer + 1);
             gameScreen.style.backgroundColor = '#82ff62';
             setTimeout(() => gameScreen.style.backgroundColor = 'transparent', 200)
             return;
         }
+        input.value = '';
+        input.focus();
         setWA((wrongAnswer) => wrongAnswer + 1);
         gameScreen.style.backgroundColor = '#c73153';
         setTimeout(() => gameScreen.style.backgroundColor = 'transparent', 200)
@@ -106,14 +96,11 @@ function HGame2() {
                 <button className="endbutton" onClick={gameEnd}><img src="backarrow.png" className="backicon"></img></button>
                 <div className="roundcount">{roundCounter + 1}</div>
                 <div className="rightanswer">{rightAnswer} / {wrongAnswer}</div>
-                <div className="questionrow">
-                    <img className="qimg" src={queImg.hsrc} alt="Wasap?"></img>
-                    <div className="equality">is</div>
-                    <div className="reference">{answer?.eng}</div>
-                </div>
-                <div className="answerrow">
-                    <button className="answer1b answer" onClick={() => checkAnswer(true)}>True</button>
-                    <button className="answer2b answer" onClick={() => checkAnswer(false)}>False</button>
+                <img className="qimg" src={props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'} alt="Wasap?"></img>
+                <div className="answerform">
+                    <label for="inpanswer">Write in English:</label><br></br>
+                    <input className="inputanswer" id="inpanswer" autoComplete="off" onKeyDown={(e) => {if(e.key === 'Enter') checkAnswer(input.value)}}></input>
+                    <input className="submitanswer" type="button" value="GO" onClick={() => checkAnswer(input.value)}></input>
                 </div>
             </div>
             <div className="resultscreen">
@@ -127,4 +114,4 @@ function HGame2() {
     )
 }
 
-export default HGame2;
+export default Game3;

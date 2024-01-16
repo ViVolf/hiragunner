@@ -10,3 +10,9 @@ div.gamecontainer {
     border: none 5px black;
     background-color: white;
 }
+
+div.home, div.contact {
+    flex-direction: column;
+    row-gap: 3vh;
+    border: solid 1px;
+}
