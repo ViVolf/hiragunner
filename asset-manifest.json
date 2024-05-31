@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hiragunner/static/css/main.c78900bf.css",
+    "main.js": "/hiragunner/static/js/main.b629d71d.js",
+    "static/js/453.4cdc52e5.chunk.js": "/hiragunner/static/js/453.4cdc52e5.chunk.js",
+    "index.html": "/hiragunner/index.html",
+    "main.c78900bf.css.map": "/hiragunner/static/css/main.c78900bf.css.map",
+    "main.b629d71d.js.map": "/hiragunner/static/js/main.b629d71d.js.map",
+    "453.4cdc52e5.chunk.js.map": "/hiragunner/static/js/453.4cdc52e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c78900bf.css",
+    "static/js/main.b629d71d.js"
+  ]
+}
