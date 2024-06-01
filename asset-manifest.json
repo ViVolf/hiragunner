@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hiragunner/static/css/main.c78900bf.css",
-    "main.js": "/hiragunner/static/js/main.b629d71d.js",
+    "main.css": "/hiragunner/static/css/main.f243f519.css",
+    "main.js": "/hiragunner/static/js/main.05daf874.js",
     "static/js/453.4cdc52e5.chunk.js": "/hiragunner/static/js/453.4cdc52e5.chunk.js",
     "index.html": "/hiragunner/index.html",
-    "main.c78900bf.css.map": "/hiragunner/static/css/main.c78900bf.css.map",
-    "main.b629d71d.js.map": "/hiragunner/static/js/main.b629d71d.js.map",
+    "main.f243f519.css.map": "/hiragunner/static/css/main.f243f519.css.map",
+    "main.05daf874.js.map": "/hiragunner/static/js/main.05daf874.js.map",
     "453.4cdc52e5.chunk.js.map": "/hiragunner/static/js/453.4cdc52e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c78900bf.css",
-    "static/js/main.b629d71d.js"
+    "static/css/main.f243f519.css",
+    "static/js/main.05daf874.js"
   ]
 }
