@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { hklist } from "./hklist.js";
 import "./Game.css";
+import { hklist } from "./hklist.js";
 
-function Game3(props) {
+function Game1(props) {
     //Selectors + result
     const menuScreen = document.querySelector(".menuscreen");
     const gameScreen = document.querySelector(".gamescreen");
     const resultScreen = document.querySelector(".resultscreen");
     const result = document.querySelector(".result");
-    const input = document.querySelector(".inputanswer");
     //Kana rows
     const kanaList = [...hklist];
     const [kanaBuffer, setKB] = useState([]);
-    //Question
+    //Questions + answers
     const [queImg, setQI] = useState({});
+    const [answer1, setA1] = useState({});
+    const [answer2, setA2] = useState({});
+    const [answer3, setA3] = useState({});
     //counters
     const [roundCounter, setRC] = useState(0);
     const [rightAnswer, setRA] = useState(0);
@@ -23,6 +25,11 @@ function Game3(props) {
     useEffect(() => {
         cardShuffle();
     }, []);
+
+    //New round iteration
+    useEffect(() => {
+        newRound();
+    }, [queImg]);
 
     //First Kana setter
     useEffect(() => {
@@ -40,7 +47,6 @@ function Game3(props) {
         menuScreen.style.display = 'none';
         gameScreen.style.display = 'flex';
         resultScreen.style.display = 'none';
-        input.focus();
     }
 
     function gameEnd() {
@@ -61,18 +67,45 @@ function Game3(props) {
         resultScreen.style.display = 'flex';
     }
 
+    function newRound() {
+        const genSet = new Set();
+        if(!kanaBuffer.length) return;
+
+        while (genSet.size < 3) {
+
+            let el = Math.floor(Math.random() * 46);
+            if (kanaBuffer[el]?.id != queImg.id) {
+                genSet.add(el)
+            }
+        }
+
+        const genArr = [...genSet];
+
+        setA1(kanaBuffer[genArr[0]]);
+        setA2(kanaBuffer[genArr[1]]);
+        setA3(kanaBuffer[genArr[2]]);
+
+        switch (Math.floor(Math.random() * 3)) {
+            case 0:
+                setA1(queImg);
+                break;
+            case 1:
+                setA2(queImg);
+                break;
+            case 2:
+                setA3(queImg);
+                break;
+        }
+    }
+
     function checkAnswer(ans) {
         setRC((roundCounter) => roundCounter + 1);
-        if (ans.toLowerCase() == queImg.eng) {
-            input.value = '';
-            input.focus();
+        if (ans.id == queImg.id) {
             setRA((rightAnswer) => rightAnswer + 1);
             gameScreen.style.backgroundColor = '#82ff62';
             setTimeout(() => gameScreen.style.backgroundColor = 'transparent', 200)
             return;
         }
-        input.value = '';
-        input.focus();
         setWA((wrongAnswer) => wrongAnswer + 1);
         gameScreen.style.backgroundColor = '#c73153';
         setTimeout(() => gameScreen.style.backgroundColor = 'transparent', 200)
@@ -96,11 +129,11 @@ function Game3(props) {
                 <button className="endbutton" onClick={gameEnd}><img src="backarrow.png" className="backicon"></img></button>
                 <div className="roundcount">{roundCounter + 1}</div>
                 <div className="rightanswer">{rightAnswer} / {wrongAnswer}</div>
-                <img className="qimg" src={props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'} alt="Wasap?"></img>
-                <div className="answerform">
-                    <label for="inpanswer">Write in English:</label><br></br>
-                    <input className="inputanswer" id="inpanswer" autoComplete="off" onKeyDown={(e) => {if(e.key === 'Enter') checkAnswer(input.value)}}></input>
-                    <input className="submitanswer" type="button" value="GO" onClick={() => checkAnswer(input.value)}></input>
+                <img className="qimg" id="scalable" src={props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'} alt="Wasap?"></img>
+                <div className="answerrow">
+                    <button className="answer" onClick={() => checkAnswer(answer1)}>{answer1?.eng}</button>
+                    <button className="answer" onClick={() => checkAnswer(answer2)}>{answer2?.eng}</button>
+                    <button className="answer" onClick={() => checkAnswer(answer3)}>{answer3?.eng}</button>
                 </div>
             </div>
             <div className="resultscreen">
@@ -114,4 +147,4 @@ function Game3(props) {
     )
 }
 
-export default Game3;
+export default Game1;

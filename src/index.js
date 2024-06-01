@@ -9,14 +9,23 @@ import { Provider } from 'react-redux';
 import store from './redux/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Provider store={store}>
-  <React.StrictMode>
-    <NavBar />
-    <MainField />
-  </React.StrictMode>
-  </Provider>
-);
+console.log(window.innerWidth)
+if (window.innerWidth > 1800) {
+  root.render(
+    <Provider store={store}>
+      <React.StrictMode>
+        <NavBar />
+        <MainField />
+      </React.StrictMode>
+    </Provider>
+  );
+}
+else {
+  root.render(
+
+  );
+}
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

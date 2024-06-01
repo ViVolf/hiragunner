@@ -1,8 +1,8 @@
 import './GameContainer.css';
 import { connect } from 'react-redux';
-import Game1 from './hiragana/Game1.jsx';
-import Game2 from './hiragana/Game2.jsx';
-import Game3 from './hiragana/Game3.jsx';
+import Game1 from './kana/Game1.jsx';
+import Game2 from './kana/Game2.jsx';
+import Game3 from './kana/Game3.jsx';
 
 function GameContainer(props) {
     let key = Math.random();//Reload simular components
@@ -10,8 +10,8 @@ function GameContainer(props) {
     switch (props.game) {
         case 'Home': return (
             <div className='gamecontainer home'>
-                <p1>Hey, this is the main page of my ReactJS pet project. I'm making it for myself to train Japanese kana.</p1>
-                <p2>To start - choose one of the games from "Hiragana" or "Katakana" sections from above.</p2>
+                <p>Hey, this is the main page of my ReactJS pet project. I'm making it for myself to train Japanese kana.</p>
+                <p>To start - choose one of the games from "Hiragana" or "Katakana" sections from above.</p>
             </div>
         );
         case 'HGame 1': return (
