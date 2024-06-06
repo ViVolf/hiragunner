@@ -4,11 +4,11 @@ import "./Game.css";
 
 function Game3(props) {
     //Selectors + result
-    const menuScreen = document.querySelector(".menuscreen");
-    const gameScreen = document.querySelector(".gamescreen");
-    const resultScreen = document.querySelector(".resultscreen");
+    const menuScreen = document.querySelector(".menu-screen");
+    const gameScreen = document.querySelector(".game-screen");
+    const resultScreen = document.querySelector(".result-screen");
     const result = document.querySelector(".result");
-    const input = document.querySelector(".inputanswer");
+    const input = document.querySelector(".input-answer");
     //Kana rows
     const kanaList = [...hklist];
     const [kanaBuffer, setKB] = useState([]);
@@ -31,7 +31,7 @@ function Game3(props) {
 
     //Next Kana setters
     useEffect(() => {
-        if (roundCounter > 45) resultEnd(rightAnswer, (rightAnswer / 46).toFixed(2) * 100);
+        if (roundCounter > 70) resultEnd(rightAnswer, (rightAnswer / 71).toFixed(2) * 100);
         setQI(kanaBuffer[roundCounter] || 0);
     }, [roundCounter]);
 
@@ -89,25 +89,27 @@ function Game3(props) {
 
     return (
         <div id="board">
-            <div className="menuscreen">
-                <button className="startbutton" onClick={gameStart}>Start</button>
+            <div className="menu-screen">
+                <button className="start-button" onClick={gameStart}>Start</button>
             </div>
-            <div className="gamescreen">
-                <button className="endbutton" onClick={gameEnd}><img src="backarrow.png" className="backicon"></img></button>
-                <div className="roundcount">{roundCounter + 1}</div>
-                <div className="rightanswer">{rightAnswer} / {wrongAnswer}</div>
-                <img className="qimg" id="scalable" src={props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'} alt="Wasap?"></img>
-                <div className="answerform">
-                    <label id="answerlabel" for="inpanswer">Write in English:</label><br></br>
-                    <input className="inputanswer" id="inpanswer" autoComplete="off" onKeyDown={(e) => {if(e.key === 'Enter') checkAnswer(input.value)}}></input>
-                    <input className="submitanswer" type="button" value="GO" onClick={() => checkAnswer(input.value)}></input>
+            <div className="game-screen">
+                <button className="end-button" onClick={gameEnd}><img src="backarrow.png" className="back-icon"></img></button>
+                <div className="round-count"><span>{roundCounter + 1}</span></div>
+                <div className="right-answer"><span>{rightAnswer} / {wrongAnswer}</span></div>
+                <div id="question">
+                    {props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'}
+                </div>
+                <div className="answer-form">
+                    <label id="answer-label" htmlFor="inp-answer">Write in English:</label><br></br>
+                    <input className="input-answer" id="inp-answer" autoComplete="off" onKeyDown={(e) => { if (e.key === 'Enter') checkAnswer(input.value) }}></input>
+                    <input className="submit-answer" type="button" value="GO" onClick={() => checkAnswer(input.value)}></input>
                 </div>
             </div>
-            <div className="resultscreen">
+            <div className="result-screen">
                 <div className="result"></div>
-                <div className="exitbuttons">
-                    <button className="startagain" onClick={gameEnd}>Back to menu</button>
-                    <button className="startagain" onClick={gameStart}>Start again</button>
+                <div className="exit-buttons">
+                    <button className="start-again" onClick={gameEnd}>Back to menu</button>
+                    <button className="start-again" onClick={gameStart}>Start again</button>
                 </div>
             </div>
         </div>

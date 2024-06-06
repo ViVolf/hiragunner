@@ -4,7 +4,7 @@ import FallingLeaves from "../visuals/FallingLeaves";
 
 function MainField() {
     return (
-        <div className="mainfield">
+        <div className="main-field">
             <FallingLeaves />
             <GameContainer />
             <FallingLeaves />

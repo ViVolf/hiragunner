@@ -7,9 +7,13 @@ function NavBar() {
   const dispatch = useDispatch()
 
   return (
-    <nav>
+    <nav id="nav-container">
       <ul className="menu">
-        <li className="menu-item home-button"><button onClick={() => dispatch(changeGame('Home'))}><img src='hira_icon.png' className='homeicon'></img></button></li>
+        <li className="menu-item" id='home-button'>
+          <button onClick={() => dispatch(changeGame('Home'))}>
+            <img src='hira_icon.png' className='homeicon'></img>
+          </button>
+        </li>
         <li className="menu-item dropdown">
           <button>Hiragana</button>
           <ul className="submenu">

@@ -4,9 +4,9 @@ import { hklist } from "./hklist.js";
 
 function Game1(props) {
     //Selectors + result
-    const menuScreen = document.querySelector(".menuscreen");
-    const gameScreen = document.querySelector(".gamescreen");
-    const resultScreen = document.querySelector(".resultscreen");
+    const menuScreen = document.querySelector(".menu-screen");
+    const gameScreen = document.querySelector(".game-screen");
+    const resultScreen = document.querySelector(".result-screen");
     const result = document.querySelector(".result");
     //Kana rows
     const kanaList = [...hklist];
@@ -38,7 +38,7 @@ function Game1(props) {
 
     //Next Kana setters
     useEffect(() => {
-        if (roundCounter > 45) resultEnd(rightAnswer, (rightAnswer / 46).toFixed(2) * 100);
+        if (roundCounter > 70) resultEnd(rightAnswer, (rightAnswer / 71).toFixed(2) * 100);
         setQI(kanaBuffer[roundCounter] || 0);
     }, [roundCounter]);
 
@@ -69,11 +69,11 @@ function Game1(props) {
 
     function newRound() {
         const genSet = new Set();
-        if(!kanaBuffer.length) return;
+        if (!kanaBuffer.length) return;
 
         while (genSet.size < 3) {
 
-            let el = Math.floor(Math.random() * 46);
+            let el = Math.floor(Math.random() * 71);
             if (kanaBuffer[el]?.id != queImg.id) {
                 genSet.add(el)
             }
@@ -122,25 +122,27 @@ function Game1(props) {
 
     return (
         <div id="board">
-            <div className="menuscreen">
-                <button className="startbutton" onClick={gameStart}>Start</button>
+            <div className="menu-screen">
+                <button className="start-button" onClick={gameStart}>Start</button>
             </div>
-            <div className="gamescreen">
-                <button className="endbutton" onClick={gameEnd}><img src="backarrow.png" className="backicon"></img></button>
-                <div className="roundcount">{roundCounter + 1}</div>
-                <div className="rightanswer">{rightAnswer} / {wrongAnswer}</div>
-                <img className="qimg" id="scalable" src={props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'} alt="Wasap?"></img>
-                <div className="answerrow">
+            <div className="game-screen">
+                <button className="end-button" onClick={gameEnd}><img src="backarrow.png" className="back-icon"></img></button>
+                <div className="round-count"><span>{roundCounter + 1}</span></div>
+                <div className="right-answer"><span>{rightAnswer} / {wrongAnswer}</span></div>
+                <div id="question">
+                    {props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'}
+                </div>
+                <div className="answer-row">
                     <button className="answer" onClick={() => checkAnswer(answer1)}>{answer1?.eng}</button>
                     <button className="answer" onClick={() => checkAnswer(answer2)}>{answer2?.eng}</button>
                     <button className="answer" onClick={() => checkAnswer(answer3)}>{answer3?.eng}</button>
                 </div>
             </div>
-            <div className="resultscreen">
+            <div className="result-screen">
                 <div className="result"></div>
-                <div className="exitbuttons">
-                    <button className="startagain" onClick={gameEnd}>Back to menu</button>
-                    <button className="startagain" onClick={gameStart}>Start again</button>
+                <div className="exit-buttons">
+                    <button className="start-again" onClick={gameEnd}>Back to menu</button>
+                    <button className="start-again" onClick={gameStart}>Start again</button>
                 </div>
             </div>
         </div>

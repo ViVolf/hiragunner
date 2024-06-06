@@ -2,322 +2,497 @@ export const hklist = [
     {
         id: 1,
         eng: 'a',
-        hsrc: 'kana/hiragana/a.png',
-        ksrc: 'kana/katakana/a.png'
+        hsrc: 'あ',
+        ksrc: 'ア'
     }
     ,
     {
         id : 2,
         eng: 'i',
-        hsrc: 'kana/hiragana/i.png',
-        ksrc: 'kana/katakana/i.png'
+        hsrc: 'い',
+        ksrc: 'イ'
     }
     ,
     {
         id: 3,
         eng: 'u',
-        hsrc: 'kana/hiragana/u.png',
-        ksrc: 'kana/katakana/u.png'
+        hsrc: 'う',
+        ksrc: 'ウ'
     }
     ,
     {
         id: 4,
         eng: 'e',
-        hsrc: 'kana/hiragana/e.png',
-        ksrc: 'kana/katakana/e.png'
+        hsrc: 'え',
+        ksrc: 'エ'
     }
     ,
     {
         id: 5,
         eng: 'o',
-        hsrc: 'kana/hiragana/o.png',
-        ksrc: 'kana/katakana/o.png'
+        hsrc: 'お',
+        ksrc: 'オ'
     }
     ,
     {
         id: 6,
         eng: 'ka',
-        hsrc: 'kana/hiragana/ka.png',
-        ksrc: 'kana/katakana/ka.png'
+        hsrc: 'か',
+        ksrc: 'カ'
     }
     ,
     {
-        id: 7,
-        eng: 'ki',
-        hsrc: 'kana/hiragana/ki.png',
-        ksrc: 'kana/katakana/ki.png'
+        id : 7,
+        eng: 'ga',
+        hsrc: 'が',
+        ksrc: 'ガ'
     }
     ,
     {
         id: 8,
-        eng: 'ku',
-        hsrc: 'kana/hiragana/ku.png',
-        ksrc: 'kana/katakana/ku.png'
+        eng: 'ki',
+        hsrc: 'き',
+        ksrc: 'キ'
     }
     ,
     {
         id: 9,
-        eng: 'ke',
-        hsrc: 'kana/hiragana/ke.png',
-        ksrc: 'kana/katakana/ke.png'
+        eng: 'gi',
+        hsrc: 'ぎ',
+        ksrc: 'ギ'
     }
-    ,
+    , 
     {
         id: 10,
-        eng: 'ko',
-        hsrc: 'kana/hiragana/ko.png',
-        ksrc: 'kana/katakana/ko.png'
+        eng: 'ku',
+        hsrc: 'く',
+        ksrc: 'ク'
     }
     ,
     {
         id: 11,
-        eng: 'sa',
-        hsrc: 'kana/hiragana/sa.png',
-        ksrc: 'kana/katakana/sa.png'
+        eng: 'gu',
+        hsrc: 'ぐ',
+        ksrc: 'グ'
     }
     ,
     {
         id: 12,
-        eng: 'shi',
-        hsrc: 'kana/hiragana/shi.png',
-        ksrc: 'kana/katakana/shi.png'
+        eng: 'ke',
+        hsrc: 'け',
+        ksrc: 'ケ'
     }
     ,
     {
         id: 13,
-        eng: 'su',
-        hsrc: 'kana/hiragana/su.png',
-        ksrc: 'kana/katakana/su.png'
+        eng: 'ge',
+        hsrc: 'げ',
+        ksrc: 'ゲ'
     }
     ,
     {
         id: 14,
-        eng: 'se',
-        hsrc: 'kana/hiragana/se.png',
-        ksrc: 'kana/katakana/se.png'
+        eng: 'ko',
+        hsrc: 'こ',
+        ksrc: 'コ'
     }
     ,
     {
         id: 15,
-        eng: 'so',
-        hsrc: 'kana/hiragana/so.png',
-        ksrc: 'kana/katakana/so.png'
+        eng: 'go',
+        hsrc: 'ご',
+        ksrc: 'ゴ'
     }
     ,
     {
         id: 16,
-        eng: 'ta',
-        hsrc: 'kana/hiragana/ta.png',
-        ksrc: 'kana/katakana/ta.png'
+        eng: 'sa',
+        hsrc: 'さ',
+        ksrc: 'サ'
     }
     ,
     {
         id: 17,
-        eng: 'chi',
-        hsrc: 'kana/hiragana/chi.png',
-        ksrc: 'kana/katakana/chi.png'
+        eng: 'za',
+        hsrc: 'ざ',
+        ksrc: 'ザ'
     }
     ,
     {
         id: 18,
-        eng: 'tsu',
-        hsrc: 'kana/hiragana/tsu.png',
-        ksrc: 'kana/katakana/tsu.png'
+        eng: 'shi',
+        hsrc: 'し',
+        ksrc: 'シ'
     }
     ,
     {
         id: 19,
-        eng: 'te',
-        hsrc: 'kana/hiragana/te.png',
-        ksrc: 'kana/katakana/te.png'
+        eng: 'dji',
+        hsrc: 'じ',
+        ksrc: 'ジ'
     }
     ,
     {
         id: 20,
-        eng: 'to',
-        hsrc: 'kana/hiragana/to.png',
-        ksrc: 'kana/katakana/to.png'
+        eng: 'su',
+        hsrc: 'す',
+        ksrc: 'ス'
     }
     ,
     {
         id: 21,
-        eng: 'na',
-        hsrc: 'kana/hiragana/na.png',
-        ksrc: 'kana/katakana/na.png'
+        eng: 'zu',
+        hsrc: 'ず',
+        ksrc: 'ズ'
     }
     ,
     {
         id: 22,
-        eng: 'ni',
-        hsrc: 'kana/hiragana/ni.png',
-        ksrc: 'kana/katakana/ni.png'
+        eng: 'se',
+        hsrc: 'せ',
+        ksrc: 'セ'
     }
     ,
     {
         id: 23,
-        eng: 'nu',
-        hsrc: 'kana/hiragana/nu.png',
-        ksrc: 'kana/katakana/nu.png'
+        eng: 'ze',
+        hsrc: 'ぜ',
+        ksrc: 'ゼ'
     }
     ,
     {
         id: 24,
-        eng: 'ne',
-        hsrc: 'kana/hiragana/ne.png',
-        ksrc: 'kana/katakana/ne.png'
+        eng: 'so',
+        hsrc: 'そ',
+        ksrc: 'ソ'
     }
     ,
     {
         id: 25,
-        eng: 'no',
-        hsrc: 'kana/hiragana/no.png',
-        ksrc: 'kana/katakana/no.png'
+        eng: 'zo',
+        hsrc: 'ぞ',
+        ksrc: 'ゾ'
     }
     ,
     {
         id: 26,
-        eng: 'ha',
-        hsrc: 'kana/hiragana/ha.png',
-        ksrc: 'kana/katakana/ha.png'
+        eng: 'ta',
+        hsrc: 'た',
+        ksrc: 'タ'
     }
     ,
     {
         id: 27,
-        eng: 'hi',
-        hsrc: 'kana/hiragana/hi.png',
-        ksrc: 'kana/katakana/hi.png'
+        eng: 'da',
+        hsrc: 'だ',
+        ksrc: 'ダ'
     }
     ,
     {
         id: 28,
-        eng: 'fu',
-        hsrc: 'kana/hiragana/fu.png',
-        ksrc: 'kana/katakana/fu.png'
+        eng: 'chi',
+        hsrc: 'ち',
+        ksrc: 'チ'
     }
     ,
     {
         id: 29,
-        eng: 'he',
-        hsrc: 'kana/hiragana/he.png',
-        ksrc: 'kana/katakana/he.png'
+        eng: 'ji',
+        hsrc: 'ぢ',
+        ksrc: 'ヂ'
     }
     ,
     {
         id: 30,
-        eng: 'ho',
-        hsrc: 'kana/hiragana/ho.png',
-        ksrc: 'kana/katakana/ho.png'
+        eng: 'tsu',
+        hsrc: 'つ',
+        ksrc: 'ツ'
     }
     ,
     {
         id: 31,
-        eng: 'ma',
-        hsrc: 'kana/hiragana/ma.png',
-        ksrc: 'kana/katakana/ma.png'
+        eng: 'dzu',
+        hsrc: 'づ',
+        ksrc: 'ヅ'
     }
     ,
     {
         id: 32,
-        eng: 'mi',
-        hsrc: 'kana/hiragana/mi.png',
-        ksrc: 'kana/katakana/mi.png'
+        eng: 'te',
+        hsrc: 'て',
+        ksrc: 'テ'
     }
     ,
     {
         id: 33,
-        eng: 'mu',
-        hsrc: 'kana/hiragana/mu.png',
-        ksrc: 'kana/katakana/mu.png'
+        eng: 'de',
+        hsrc: 'で',
+        ksrc: 'デ'
     }
     ,
     {
         id: 34,
-        eng: 'me',
-        hsrc: 'kana/hiragana/me.png',
-        ksrc: 'kana/katakana/me.png'
+        eng: 'to',
+        hsrc: 'と',
+        ksrc: 'ト'
     }
     ,
     {
         id: 35,
-        eng: 'mo',
-        hsrc: 'kana/hiragana/mo.png',
-        ksrc: 'kana/katakana/mo.png'
+        eng: 'do',
+        hsrc: 'ど',
+        ksrc: 'ド'
     }
     ,
     {
         id: 36,
-        eng: 'ya',
-        hsrc: 'kana/hiragana/ya.png',
-        ksrc: 'kana/katakana/ya.png'
+        eng: 'na',
+        hsrc: 'な',
+        ksrc: 'ナ'
     }
     ,
     {
         id: 37,
-        eng: 'yu',
-        hsrc: 'kana/hiragana/yu.png',
-        ksrc: 'kana/katakana/yu.png'
+        eng: 'ni',
+        hsrc: 'に',
+        ksrc: 'ニ'
     }
     ,
     {
         id: 38,
-        eng: 'yo',
-        hsrc: 'kana/hiragana/yo.png',
-        ksrc: 'kana/katakana/yo.png'
+        eng: 'nu',
+        hsrc: 'ぬ',
+        ksrc: 'ヌ'
     }
     ,
     {
         id: 39,
-        eng: 'ra',
-        hsrc: 'kana/hiragana/ra.png',
-        ksrc: 'kana/katakana/ra.png'
+        eng: 'ne',
+        hsrc: 'ね',
+        ksrc: 'ネ'
     }
     ,
     {
         id: 40,
-        eng: 'ri',
-        hsrc: 'kana/hiragana/ri.png',
-        ksrc: 'kana/katakana/ri.png'
+        eng: 'no',
+        hsrc: 'の',
+        ksrc: 'ノ'
     }
     ,
     {
         id: 41,
-        eng: 'ru',
-        hsrc: 'kana/hiragana/ru.png',
-        ksrc: 'kana/katakana/ru.png'
+        eng: 'ha',
+        hsrc: 'は',
+        ksrc: 'ハ'
     }
     ,
     {
         id: 42,
-        eng: 're',
-        hsrc: 'kana/hiragana/re.png',
-        ksrc: 'kana/katakana/re.png'
+        eng: 'ba',
+        hsrc: 'ば',
+        ksrc: 'バ'
     }
     ,
     {
         id: 43,
-        eng: 'ro',
-        hsrc: 'kana/hiragana/ro.png',
-        ksrc: 'kana/katakana/ro.png'
+        eng: 'pa',
+        hsrc: 'ぱ',
+        ksrc: 'パ'
     }
     ,
     {
         id: 44,
-        eng: 'wa',
-        hsrc: 'kana/hiragana/wa.png',
-        ksrc: 'kana/katakana/wa.png'
+        eng: 'hi',
+        hsrc: 'ひ',
+        ksrc: 'ヒ'
     }
     ,
     {
         id: 45,
-        eng: 'wo',
-        hsrc: 'kana/hiragana/wo.png',
-        ksrc: 'kana/katakana/wo.png'
+        eng: 'bi',
+        hsrc: 'び',
+        ksrc: 'ビ'
     }
     ,
     {
         id: 46,
+        eng: 'pi',
+        hsrc: 'ぴ',
+        ksrc: 'ピ'
+    }
+    ,
+    {
+        id: 47,
+        eng: 'fu',
+        hsrc: 'ふ',
+        ksrc: 'フ'
+    }
+    ,
+    {
+        id: 48,
+        eng: 'bu',
+        hsrc: 'ぶ',
+        ksrc: 'ブ'
+    }
+    ,
+    {
+        id: 49,
+        eng: 'pu',
+        hsrc: 'ぷ',
+        ksrc: 'プ'
+    }
+    ,
+    {
+        id: 50,
+        eng: 'he',
+        hsrc: 'へ',
+        ksrc: 'ヘ'
+    }
+    ,
+    {
+        id: 51,
+        eng: 'be',
+        hsrc: 'べ',
+        ksrc: 'ベ'
+    }
+    ,
+    {
+        id: 52,
+        eng: 'pe',
+        hsrc: 'ぺ',
+        ksrc: 'ペ'
+    }
+    ,
+    {
+        id: 53,
+        eng: 'ho',
+        hsrc: 'ほ',
+        ksrc: 'ホ'
+    }
+    ,
+    {
+        id: 54,
+        eng: 'bo',
+        hsrc: 'ぼ',
+        ksrc: 'ボ'
+    }
+    ,
+    {
+        id: 55,
+        eng: 'po',
+        hsrc: 'ぽ',
+        ksrc: 'ポ'
+    }
+    ,
+    {
+        id: 56,
+        eng: 'ma',
+        hsrc: 'ま',
+        ksrc: 'マ'
+    }
+    ,
+    {
+        id: 57,
+        eng: 'mi',
+        hsrc: 'み',
+        ksrc: 'ミ'
+    }
+    ,
+    {
+        id: 58,
+        eng: 'mu',
+        hsrc: 'む',
+        ksrc: 'ム'
+    }
+    ,
+    {
+        id: 59,
+        eng: 'me',
+        hsrc: 'め',
+        ksrc: 'メ'
+    }
+    ,
+    {
+        id: 60,
+        eng: 'mo',
+        hsrc: 'も',
+        ksrc: 'モ'
+    }
+    ,
+    {
+        id: 61,
+        eng: 'ya',
+        hsrc: 'や',
+        ksrc: 'ヤ'
+    }
+    ,
+    {
+        id: 62,
+        eng: 'yu',
+        hsrc: 'ゆ',
+        ksrc: 'ユ'
+    }
+    ,
+    {
+        id: 63,
+        eng: 'yo',
+        hsrc: 'よ',
+        ksrc: 'ヨ'
+    }
+    ,
+    {
+        id: 64,
+        eng: 'ra',
+        hsrc: 'ら',
+        ksrc: 'ラ'
+    }
+    ,
+    {
+        id: 65,
+        eng: 'ri',
+        hsrc: 'り',
+        ksrc: 'リ'
+    }
+    ,
+    {
+        id: 66,
+        eng: 'ru',
+        hsrc: 'る',
+        ksrc: 'ル'
+    }
+    ,
+    {
+        id: 67,
+        eng: 're',
+        hsrc: 'れ',
+        ksrc: 'レ'
+    }
+    ,
+    {
+        id: 68,
+        eng: 'ro',
+        hsrc: 'ろ',
+        ksrc: 'ロ'
+    }
+    ,
+    {
+        id: 69,
+        eng: 'wa',
+        hsrc: 'わ',
+        ksrc: 'ワ'
+    }
+    ,
+    {
+        id: 70,
+        eng: 'wo',
+        hsrc: 'を',
+        ksrc: 'ヲ'
+    }
+    ,
+    {
+        id: 71,
         eng: 'n',
-        hsrc: 'kana/hiragana/n.png',
-        ksrc: 'kana/katakana/n.png'
+        hsrc: 'ん',
+        ksrc: 'ン'
     }
 ];
