@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "./Game.css";
 import { hklist } from "./hklist.js";
+import "./Game.css";
+import ControlPanel from "./ControlPanel.jsx";
 
 function Game2(props) {
     //Selectors + result
@@ -107,17 +108,15 @@ function Game2(props) {
                 <button className="start-button" onClick={gameStart}>Start</button>
             </div>
             <div className="game-screen">
-                <button className="end-button" onClick={gameEnd}><img src="backarrow.png" className="back-icon"></img></button>
-                <div className="round-count"><span>{roundCounter + 1}</span></div>
-                <div className="right-answer"><span>{rightAnswer} / {wrongAnswer}</span></div>
+                <ControlPanel gameEnd={gameEnd} roundCounter={roundCounter} rightAnswer={rightAnswer} wrongAnswer={wrongAnswer} />
                 <div className="question-row">
-                    <div id="question-tf">
+                    <div className="question" id="true-false-question">
                         {props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'}
                     </div>
                     <div className="equality">is</div>
                     <div className="reference">{answer?.eng}</div>
                 </div>
-                <div className="answer-row-tf">
+                <div className="answer-row" id="true-false-answers">
                     <button className="answer1 answer" onClick={() => checkAnswer(true)}>True</button>
                     <button className="answer2 answer" onClick={() => checkAnswer(false)}>False</button>
                 </div>

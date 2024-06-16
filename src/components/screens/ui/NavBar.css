@@ -96,7 +96,7 @@
     }
 
     .menu-item {
-        width: 29%;
+        width: 27%;
     }
 
     #home-button {
@@ -104,6 +104,6 @@
     }
 
     .menu-item button {
-        font-size: calc(1vh + 0.85vw);
+        font-size: calc(1.25vh + 1vw);
     }
 }

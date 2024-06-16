@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { hklist } from "./hklist.js";
 import "./Game.css";
+import ControlPanel from "./ControlPanel.jsx";
 
 function Game3(props) {
     //Selectors + result
@@ -93,11 +94,11 @@ function Game3(props) {
                 <button className="start-button" onClick={gameStart}>Start</button>
             </div>
             <div className="game-screen">
-                <button className="end-button" onClick={gameEnd}><img src="backarrow.png" className="back-icon"></img></button>
-                <div className="round-count"><span>{roundCounter + 1}</span></div>
-                <div className="right-answer"><span>{rightAnswer} / {wrongAnswer}</span></div>
-                <div id="question">
-                    {props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'}
+                <ControlPanel gameEnd={gameEnd} roundCounter={roundCounter} rightAnswer={rightAnswer} wrongAnswer={wrongAnswer} />
+                <div className="question-row">
+                    <div className="question">
+                        {props.type === 'hiragana' ? queImg.hsrc : props.type === 'katakana' ? queImg.ksrc : 'hira_icon.png'}
+                    </div>
                 </div>
                 <div className="answer-form">
                     <label id="answer-label" htmlFor="inp-answer">Write in English:</label><br></br>
